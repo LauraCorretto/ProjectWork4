@@ -1,0 +1,123 @@
+Table Passeggero {
+  IdPasseggero int [pk]
+  Nome varchar
+  Cognome varchar
+  DataNascita date
+  CF  varchar2
+  Sesso varchar2
+  Email varchar
+  Telefono varchar
+  IdAccount int
+}
+
+Table Prenotazione_Attiva{
+  IdPrenotazione int [pk]
+  IdItinerario int
+  IdAccount int
+  IdPasseggero int
+  }
+
+Table Storico_Prenotazione{
+  IdStorico int [pk]
+  IdItinerario int
+  IdAccount int
+  IdPasseggero int
+  }
+
+Table Account {
+  IdAccount int [pk]
+  Email varchar
+  Password varchar
+  DataCreazione date
+}
+
+Table Dati_Pagamento {
+  IdDatiPagamento in [pk]
+  Tipo varchar 
+  NumeroCarta varchar
+  DataValidità date
+  Nome varchar
+  Cognome varchar
+  Paese varchar
+  Via varchar
+  Città varchar
+  CAP varchar
+  IdAccount int
+}
+
+Table Documento {
+  IdDocumento int [pk]
+  Tipo varchar
+  Numero varchar
+  DataEmissione date
+  DataScadenza date
+  PaeseEmittente varchar
+  IdPasseggero int
+}
+
+Table Biglietto {
+  IdBiglietto int [pk]
+  IdPasseggero int
+  IdItinerario int
+  Prezzo decimal
+  DataAcquisto date
+}
+
+Table Opzione {
+  IdOpzione int [pk]
+  Tipo varchar
+  Prezzo decimal
+}
+
+Table Biglietto_Opzione {
+  IdBiglietto int
+  IdOpzione int
+}
+
+Table Itinerario {
+  IdItinerario int [pk]
+  Descrizione varchar
+  DataCreazione date
+}
+
+Table Volo {
+  IdVolo int [pk]
+  NumeroVolo varchar
+  IdAeroportoPartenza int
+  IdAeroportoArrivo int
+  DataOraPartenza datetime
+  DataOraArrivo datetime
+  CompagniaAerea varchar
+}
+
+Table Itinerario_Volo {
+  IdItinerario int
+  IdVolo int
+  Ordine int
+}
+
+Table Aeroporto {
+  IdAeroporto int [pk]
+  Nome varchar
+  Codice varchar
+  Città varchar
+  Nazione varchar
+}
+
+Ref: Passeggero.IdAccount > Account.IdAccount
+Ref: Documento.IdPasseggero > Passeggero.IdPasseggero
+Ref: Biglietto.IdPasseggero > Passeggero.IdPasseggero
+Ref: Biglietto.IdItinerario > Itinerario.IdItinerario
+Ref: Biglietto_Opzione.IdBiglietto > Biglietto.IdBiglietto
+Ref: Biglietto_Opzione.IdOpzione > Opzione.IdOpzione
+Ref: Itinerario_Volo.IdItinerario > Itinerario.IdItinerario
+Ref: Itinerario_Volo.IdVolo > Volo.IdVolo
+Ref: Volo.IdAeroportoPartenza > Aeroporto.IdAeroporto
+Ref: Volo.IdAeroportoArrivo > Aeroporto.IdAeroporto
+Ref: Dati_Pagamento.IdAccount > Account.IdAccount
+Ref: Prenotazione_Attiva.IdAccount > Account.IdAccount
+Ref: Prenotazione_Attiva.IdPasseggero > Passeggero.IdPasseggero
+Ref: Prenotazione_Attiva.IdItinerario < Itinerario.IdItinerario
+Ref: Storico_Prenotazione.IdAccount > Account.IdAccount
+Ref: Storico_Prenotazione.IdPasseggero > Passeggero.IdPasseggero
+ref: Storico_Prenotazione.IdItinerario < Itinerario.IdItinerario
