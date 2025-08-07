@@ -12,15 +12,13 @@ Table Passeggero {
 
 Table Prenotazione_Attiva{
   IdPrenotazione int [pk]
-  IdItinerario int
-  IdAccount int
   IdPasseggero int
+  IdItinerario int
   }
 
 Table Storico_Prenotazione{
   IdStorico int [pk]
   IdItinerario int
-  IdAccount int
   IdPasseggero int
   }
 
@@ -106,8 +104,8 @@ Table Aeroporto {
 
 Ref: Passeggero.IdAccount > Account.IdAccount
 Ref: Documento.IdPasseggero > Passeggero.IdPasseggero
-Ref: Biglietto.IdPasseggero > Passeggero.IdPasseggero
-Ref: Biglietto.IdItinerario > Itinerario.IdItinerario
+Ref: Biglietto.IdPasseggero > Prenotazione_Attiva.IdPasseggero
+Ref: Biglietto.IdItinerario > Prenotazione_Attiva.IdItinerario
 Ref: Biglietto_Opzione.IdBiglietto > Biglietto.IdBiglietto
 Ref: Biglietto_Opzione.IdOpzione > Opzione.IdOpzione
 Ref: Itinerario_Volo.IdItinerario > Itinerario.IdItinerario
@@ -115,9 +113,7 @@ Ref: Itinerario_Volo.IdVolo > Volo.IdVolo
 Ref: Volo.IdAeroportoPartenza > Aeroporto.IdAeroporto
 Ref: Volo.IdAeroportoArrivo > Aeroporto.IdAeroporto
 Ref: Dati_Pagamento.IdAccount > Account.IdAccount
-Ref: Prenotazione_Attiva.IdAccount > Account.IdAccount
 Ref: Prenotazione_Attiva.IdPasseggero > Passeggero.IdPasseggero
 Ref: Prenotazione_Attiva.IdItinerario < Itinerario.IdItinerario
-Ref: Storico_Prenotazione.IdAccount > Account.IdAccount
-Ref: Storico_Prenotazione.IdPasseggero > Passeggero.IdPasseggero
-ref: Storico_Prenotazione.IdItinerario < Itinerario.IdItinerario
+Ref: Storico_Prenotazione.IdPasseggero < Prenotazione_Attiva.IdPasseggero
+Ref: Storico_Prenotazione.IdItinerario < Prenotazione_Attiva.IdItinerario
