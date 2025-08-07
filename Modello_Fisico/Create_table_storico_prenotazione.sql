@@ -3,7 +3,6 @@ create table "Storico_Prenotazione"
 ( 
   "IdStorico"              NUMBER not null,
   "IdItinerario"           NUMBER,
-  "IdAccount"              NUMBER,
   "IdPasseggero"           NUMBER
 )
 tablespace TSGX0D00
@@ -39,9 +38,6 @@ alter table Storico_Prenotazione  add constraint INPKYIdStorico primary key (IdS
 alter table Storico_Prenotazione
   add constraint FKITINERARIO2 foreign key ("IdItinerario")
   references "Itinerario"  ("IdItinerario");
-alter table Storico_Prenotazione
-  add constraint FKACCOUNT1 foreign key ("IdAccount")
-  references "Account"  ("IdAccount");
 alter table Storico_Prenotazione
   add constraint FKPASSEGGERO1 foreign key ("IdPasseggero")
   references "Passeggero"  ("IdPasseggero");

@@ -10,7 +10,7 @@ begin
   IF INSERTING THEN -- quando un nuova tupla è inserita sulla tabella delle prenotazioni attive
                     -- viene generata automaticamente il corrispettivo nello storico prenotazioni
     Begin
-     insert into "Storico_Prenotazione" values (:NEW."IdPrenotazione", :NEW."IdItinerario",:NEW."IdAccount",:NEW."IdPasseggero");
+     insert into "Storico_Prenotazione" values (:NEW."IdPrenotazione", :NEW."IdItinerario",:NEW."IdPasseggero");
     exception
       when others then
         null;
@@ -20,7 +20,6 @@ begin
     Begin
      update "Storico_Prenotazione" 
       set "IdItinerario" = :NEW."IdItinerario",
-          "IdAccount"    = :NEW."IdAccount",
           "IdPasseggero" = :NEW."IdPasseggero"
      where "IdStorico" = :NEW."IdPrenotazione";
     exception

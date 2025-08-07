@@ -5,8 +5,7 @@ create table "Biglietto"
   "Prezzo"                  VARCHAR2(100) not null,
   "DataAcquisto"            DATE not null,
   "IdPasseggero"            NUMBER,
-  "IdItinerario"            NUMBER,
-  
+  "IdItinerario"            NUMBER  
 )
 tablespace TSGX0D00
   pctfree 10

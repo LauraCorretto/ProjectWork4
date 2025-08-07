@@ -22,7 +22,7 @@ create or replace procedure reportStorico(path_out    IN VARCHAR2, -- path fisic
            to_char(p."DataNascita",'DD/MM/YYYY') DataNascita, p."CF", p."Sesso", p."Email" email_p, p."Telefono",
            i."Descrizione"
     from "Storico_Prenotazione" s, "Account" a, "Passeggero" p, "Itinerario" i
-    where s."IdAccount" = a."IdAccount"
+    where p."IdAccount" = a."IdAccount"
     and s."IdPasseggero" = p."IdPasseggero"
     and s."IdItinerario" = i."IdItinerario";
     

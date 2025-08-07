@@ -3,7 +3,6 @@ create table "Prenotazione_Attiva"
 ( 
   "IdPrenotazione"         NUMBER GENERATED ALWAYS AS IDENTITY,
   "IdItinerario"           NUMBER,
-  "IdAccount"              NUMBER,
   "IdPasseggero"           NUMBER
 )
 tablespace TSGX0D00
@@ -26,9 +25,6 @@ comment on table "Prenotazione_Attiva"  is 'Taballe contenente l''elenco delle p
 alter table Prenotazione_Attiva
   add constraint FKITINERARIO1 foreign key ("IdItinerario")
   references "Itinerario"  ("IdItinerario");
-alter table Prenotazione_Attiva
-  add constraint FKACCOUNT foreign key ("IdAccount")
-  references "Account"  ("IdAccount");
 alter table Prenotazione_Attiva
   add constraint FKPASSEGGERO foreign key ("IdPasseggero")
   references "Passeggero"  ("IdPasseggero");

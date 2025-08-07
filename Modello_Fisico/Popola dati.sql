@@ -250,16 +250,16 @@ COMMIT;
 
 -- Inserimento dati in tabella Prenotazione_Attiva
 
-INSERT INTO "Prenotazione_Attiva" ("IdItinerario", "IdAccount", "IdPasseggero") VALUES (1, 1, 1);  -- Giovanni Bianchi prenota itinerario 1 per sé
-INSERT INTO "Prenotazione_Attiva" ("IdItinerario", "IdAccount", "IdPasseggero") VALUES (2, 1, 2);  -- Giovanni Bianchi prenota itinerario 2 per Laura Bianchi
-INSERT INTO "Prenotazione_Attiva" ("IdItinerario", "IdAccount", "IdPasseggero") VALUES (3, 2, 3);  -- Maria Verdi prenota itinerario 3 per sé
-INSERT INTO "Prenotazione_Attiva" ("IdItinerario", "IdAccount", "IdPasseggero") VALUES (4, 3, 4);  -- Luca Rossi prenota itinerario 4 per sé
-INSERT INTO "Prenotazione_Attiva" ("IdItinerario", "IdAccount", "IdPasseggero") VALUES (5, 3, 5);  -- Luca Rossi prenota itinerario 5 per Giulia Rossi
-INSERT INTO "Prenotazione_Attiva" ("IdItinerario", "IdAccount", "IdPasseggero") VALUES (1, 2, 3);  -- Maria Verdi prenota anche itinerario 1 (viaggio multiplo)
-INSERT INTO "Prenotazione_Attiva" ("IdItinerario", "IdAccount", "IdPasseggero") VALUES (2, 4, 6);  -- Anna Neri prenota itinerario 2 per sé
-INSERT INTO "Prenotazione_Attiva" ("IdItinerario", "IdAccount", "IdPasseggero") VALUES (3, 1, 1);  -- Giovanni Bianchi prenota itinerario 3 per sé (altro viaggio)
-INSERT INTO "Prenotazione_Attiva" ("IdItinerario", "IdAccount", "IdPasseggero") VALUES (4, 4, 6);  -- Anna Neri prenota itinerario 4 per sé (secondo viaggio)
-INSERT INTO "Prenotazione_Attiva" ("IdItinerario", "IdAccount", "IdPasseggero") VALUES (5, 2, 3);  -- Maria Verdi prenota itinerario 5 per sé (terzo viaggio)
+INSERT INTO "Prenotazione_Attiva" ("IdItinerario", "IdPasseggero") VALUES (1, 1);  -- Giovanni Bianchi prenota itinerario 1 per sé
+INSERT INTO "Prenotazione_Attiva" ("IdItinerario", "IdPasseggero") VALUES (2, 2);  -- Giovanni Bianchi prenota itinerario 2 per Laura Bianchi
+INSERT INTO "Prenotazione_Attiva" ("IdItinerario", "IdPasseggero") VALUES (3, 3);  -- Maria Verdi prenota itinerario 3 per sé
+INSERT INTO "Prenotazione_Attiva" ("IdItinerario", "IdPasseggero") VALUES (4, 4);  -- Luca Rossi prenota itinerario 4 per sé
+INSERT INTO "Prenotazione_Attiva" ("IdItinerario", "IdPasseggero") VALUES (5, 5);  -- Luca Rossi prenota itinerario 5 per Giulia Rossi
+INSERT INTO "Prenotazione_Attiva" ("IdItinerario", "IdPasseggero") VALUES (1, 3);  -- Maria Verdi prenota anche itinerario 1 (viaggio multiplo)
+INSERT INTO "Prenotazione_Attiva" ("IdItinerario", "IdPasseggero") VALUES (2, 6);  -- Anna Neri prenota itinerario 2 per sé
+INSERT INTO "Prenotazione_Attiva" ("IdItinerario", "IdPasseggero") VALUES (3, 1);  -- Giovanni Bianchi prenota itinerario 3 per sé (altro viaggio)
+INSERT INTO "Prenotazione_Attiva" ("IdItinerario", "IdPasseggero") VALUES (4, 6);  -- Anna Neri prenota itinerario 4 per sé (secondo viaggio)
+INSERT INTO "Prenotazione_Attiva" ("IdItinerario", "IdPasseggero") VALUES (5, 3);  -- Maria Verdi prenota itinerario 5 per sé (terzo viaggio)
 
 COMMIT;
 

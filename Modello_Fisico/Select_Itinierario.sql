@@ -18,8 +18,4 @@ order by iv."Ordine";
 
 
 
-select * from "Itinerario";
-select * from "Itinerario_Volo" ;
-select v.*,v.rowid from "Volo" v;
-select * from "Aeroporto" ;
 
